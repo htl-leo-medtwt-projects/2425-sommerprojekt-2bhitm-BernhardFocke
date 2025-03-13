@@ -1,0 +1,25 @@
+@font-face {
+    font-family: NotoMusic;
+    src: url(../fonts/NotoMusic.ttf);
+}
+
+body {
+    background-color: #222222;
+    
+}
+
+#headlineBox {
+    color: white;
+    font-family: NotoMusic;
+    height: 70vh;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3vh;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+}
