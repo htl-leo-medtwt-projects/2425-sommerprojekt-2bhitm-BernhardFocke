@@ -3,24 +3,32 @@
     src: url(../fonts/NotoMusic.ttf);
 }
 
+@font-face {
+    font-family: IntrumentSans;
+    src: url(../fonts/InstrumentSans-Regular.ttf);
+}
+
 :root {
     --mainColor: #222222;
+    --mainFont: NotoMusic;
+    --intrumentFont: IntrumentSans
 }
 
 body {
-    background-color: #222222;
+    background-color: var(--mainColor);
+    margin: 0;
 }
 
 #headlineBox {
     color: white;
-    font-family: NotoMusic;
-    height: 60vh;   
+    font-family: var(--mainFont);
+    height: 60vh;
     width: 50vw;
     margin-left: auto;
     margin-right: auto;
     border-radius: 3vh;
-    background: rgb(52,21,57);
-    background: linear-gradient(90deg, rgba(52,21,57,1) 30%, rgba(25,25,112,1) 72%); 
+    background: rgb(52, 21, 57);
+    background: linear-gradient(90deg, rgba(52, 21, 57, 1) 30%, rgba(25, 25, 112, 1) 72%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +70,8 @@ body {
     top: 1vh;
 }
 
-#laptopFL, #laptopLive {
+#laptopFL,
+#laptopLive {
     height: auto;
     width: 35vh;
 }
@@ -82,3 +91,48 @@ body {
     transform: rotate(15.68deg);
     z-index: -1;
 }
+
+/*Nav styling*/
+
+nav {
+    font-family: var(--musicFont);
+    height: 20vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    background: rgb(52, 21, 57);
+    background: linear-gradient(90deg, rgba(52, 21, 57, 1) 30%, rgba(25, 25, 112, 1) 72%);
+    position: sticky;
+    top: 0;  
+}
+
+.navItem {
+    height: 20vh;
+    width: 25%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+
+/*Intruction*/
+#intrHead {
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/avicii-concert_new.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 5vh;
+    margin-top: 5vh;
+    font-family: var(--intrumentFont);
+}
+
