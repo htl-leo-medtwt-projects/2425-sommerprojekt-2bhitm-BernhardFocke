@@ -11,7 +11,9 @@
 :root {
     --mainColor: #222222;
     --mainFont: NotoMusic;
-    --intrumentFont: IntrumentSans
+    --intrumentFont: IntrumentSans;
+    --secondColor: #000080;
+    
 }
 
 body {
@@ -132,7 +134,16 @@ nav {
     text-align: center;
     color: white;
     font-size: 5vh;
-    margin-top: 5vh;
+    margin-top: 3vh;
     font-family: var(--intrumentFont);
 }
 
+.intrBox {
+    height: 50vh;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 2vh;
+    margin-top: 5vh;
+    background-color: var(--secondColor);
+}
