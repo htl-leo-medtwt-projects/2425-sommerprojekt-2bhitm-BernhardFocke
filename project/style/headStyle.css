@@ -13,7 +13,6 @@
     --mainFont: NotoMusic;
     --intrumentFont: IntrumentSans;
     --secondColor: #000080;
-    
 }
 
 body {
@@ -98,7 +97,7 @@ body {
 
 nav {
     font-family: var(--musicFont);
-    height: 20vh;
+    height: 10vh;
     background-color: black;
     color: white;
     display: flex;
@@ -108,7 +107,7 @@ nav {
     background: rgb(52, 21, 57);
     background: linear-gradient(90deg, rgba(52, 21, 57, 1) 30%, rgba(25, 25, 112, 1) 72%);
     position: sticky;
-    top: 0;  
+    top: 0;
 }
 
 .navItem {
@@ -118,7 +117,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 
 /*Intruction*/
@@ -136,14 +135,28 @@ nav {
     font-size: 5vh;
     margin-top: 3vh;
     font-family: var(--intrumentFont);
+    margin-bottom: 30vh;
 }
 
 .intrBox {
-    height: 50vh;
+    height: 30vh;
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 2vh;
     border-radius: 2vh;
     margin-top: 5vh;
     background-color: var(--secondColor);
+    position: relative;
+    transform: rotate(2deg);
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+.imgBox > img {
+    height: auto;
+    width: 50%;
+    position: relative;
+    bottom: 0;
 }
