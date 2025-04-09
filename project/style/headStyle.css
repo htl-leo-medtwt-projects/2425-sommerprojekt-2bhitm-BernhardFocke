@@ -18,6 +18,7 @@
 body {
     background-color: var(--mainColor);
     margin: 0;
+    overflow: hidden;
 }
 
 #headlineBox {
@@ -95,31 +96,6 @@ body {
 
 /*Nav styling*/
 
-nav {
-    font-family: var(--musicFont);
-    height: 10vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20vh;
-    background: rgb(52, 21, 57);
-    background: linear-gradient(90deg, rgba(52, 21, 57, 1) 30%, rgba(25, 25, 112, 1) 72%);
-    position: sticky;
-    top: 0;
-}
-
-.navItem {
-    height: 20vh;
-    width: 25%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vh;
-}
-
 /*Intruction*/
 #intrHead {
     height: 60vh;
@@ -138,25 +114,71 @@ nav {
     margin-bottom: 30vh;
 }
 
-.intrBox {
-    height: 30vh;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 2vh;
-    border-radius: 2vh;
-    margin-top: 5vh;
-    background-color: var(--secondColor);
-    position: relative;
-    transform: rotate(2deg);
-    display: flex;
-    justify-content: space-between;
-    justify-content: center;
+a {
+    color: white;
 }
 
-.imgBox > img {
-    height: auto;
-    width: 50%;
-    position: relative;
-    bottom: 0;
+#fullpage {
+    text-align: center;
+    font-family: var(--intrumentFont);
+}
+
+#section1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/avicii-concert_new.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 5vh;
+}
+
+#section2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/artitsts/kygo1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
+#navItem0 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/concert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
+#navItem1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/artitsts/marschmello2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
+#navItem2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/aviciiSchallplatte.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
+#navItem3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/eGuitar.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: white;
 }
