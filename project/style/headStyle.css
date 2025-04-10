@@ -141,6 +141,15 @@ a {
     font-size: 4vh;
 }
 
+#section3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/flStudio.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 4vh;
+}
+
 #navItem0 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/concert.jpg);
     background-position: center;
@@ -177,6 +186,19 @@ a {
     font-size: 4vh;
 }
 
+.footer {
+    background-color: var(--mainColor);
+    color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerItem > img {
+    height: auto;
+    width: 10vh;
+}
 
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
