@@ -138,7 +138,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    font-size: 4vh;
+    font-size: 5vh;
 }
 
 #section3 {
@@ -147,8 +147,17 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    font-size: 4vh;
+    font-size: 5vh;
 }
+
+#section4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/dj.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 5vh;
+} 
 
 #navItem0 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/concert.jpg);
@@ -189,7 +198,7 @@ a {
 .footer {
     background-color: var(--mainColor);
     color: white;
-    height: 20vh;
+    height: 15vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -203,4 +212,10 @@ a {
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
     background: white;
+}
+
+#footerHead {
+    color: white;
+    font-size: 2rem;
+    padding: 1vh;
 }
