@@ -90,4 +90,43 @@ nav {
     height: auto;
     width: 35vh;
     margin-bottom: 25vh;
+    animation: spinDisk linear infinite 3s;
+}
+
+@keyframes spinDisk {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+#coverBox {
+    position: absolute;
+    top: 123vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#coverBox > img {
+    height: 20vh;
+    width: 20vw;
+}
+
+#buttonBox {
+    position: absolute;
+    top: 160vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.guessButton {
+    height: 10vh;
+    width: 20vw;
+    background-color: black;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
