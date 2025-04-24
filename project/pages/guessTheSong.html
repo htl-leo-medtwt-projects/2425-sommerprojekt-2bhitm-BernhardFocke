@@ -7,7 +7,7 @@
     <title>Guess the Song</title>
 
     <link rel="stylesheet" href="../style/guessTheSongStyle.css">
-    <script src="../js/guessTheSongScript.js"></script>
+    <script src="../js/guessTheSongScript.js" defer></script>
 
     <link rel="icon" href="../img/guessTheSong/disk.png">
 </head>
@@ -49,12 +49,24 @@
         </div>
 
         <div id="buttonBox">
-            <div class="guessButton"></div>
+            <div class="guessButtons"></div>
 
-            <div class="guessButton"></div>
+            <div class="guessButtons"></div>
         </div>
 
-        <img src="../songs/Kygo - Stole The Show (Lyrics) feat. Parson James.mp3" alt="">
+        <div id="ruleButton">
+            <p>Rules</p>
+        </div>
+
+        <!-- <div id="rules">
+            <h1>Rules</h1>
+            <p>In this Game you have to guess the right song. <br> You can choose between guessing the song by Name or
+                by Cover.</p>
+
+            <div id="ruleButtonBox">
+
+            </div>
+        </div> -->
     </div>
 </body>
 

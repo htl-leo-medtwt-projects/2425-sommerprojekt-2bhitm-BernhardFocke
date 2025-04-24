@@ -8,6 +8,11 @@
     src: url(../fonts/NotoMusic.ttf);
 }
 
+@font-face {
+    font-family: Siara;
+    src: url(../fonts/SairaCondensed-Regular.ttf);
+}
+
 body {
     margin: 0;
     background-color: var(--mainColor);
@@ -22,8 +27,10 @@ a {
     --mainColor: #222222;
     --navColor: #020024;
     --mainGradient: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+    --gameGradinent: linear-gradient(69deg, rgba(63, 94, 251, 1) 0%, rgba(153, 83, 182, 1) 41%, rgba(252, 70, 107, 1) 100%);
     --headfont: Altorned;
     --mainFont: NotoMusic;
+    --gameFont: Siara;
 }
 
 header > img {
@@ -61,7 +68,7 @@ nav {
     height: 30vh;
     width: 100%;
     background: #3F5EFB;
-    background: linear-gradient(69deg, rgba(63, 94, 251, 1) 0%, rgba(153, 83, 182, 1) 41%, rgba(252, 70, 107, 1) 100%);
+    background: var(--gameGradinent);
     margin-top: -3vh;
     color: white;
     font-size: 5vh;
@@ -75,7 +82,7 @@ nav {
     height: 80vh;
     width: 80%;
     background: #3F5EFB;
-    background: linear-gradient(130deg, rgba(63, 94, 251, 1) 0%, rgba(146, 57, 151, 1) 45%, rgba(219, 24, 63, 1) 100%);
+    background: var(--gameGradinent);
     margin-top: 5vh;
     margin-bottom: 5vh;
     margin-right: auto;
@@ -84,12 +91,47 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--gameFont);
+    position: relative;
+}
+
+#rules {
+    height: 80vh;
+    width: 80%;
+    background: #3F5EFB;
+    background: var(--gameGradinent);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 2vh;
+    font-family: var(--gameFont);
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#ruleButton {
+    height: 10vh;
+    width: 10vw;
+    background-color: rgba(219, 24, 63, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2vh;
+    color: white;
 }
 
 #disk {
     height: auto;
     width: 35vh;
     margin-bottom: 25vh;
+}
+
+.diskAnimation {
     animation: spinDisk linear infinite 3s;
 }
 
@@ -114,19 +156,21 @@ nav {
 
 #buttonBox {
     position: absolute;
-    top: 160vh;
+    top: 60vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
-.guessButton {
+.guessButtons {
     height: 10vh;
-    width: 20vw;
-    background-color: black;
+    width: 25vw;
+    background-color: black;    
     border-radius: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    pointer-events: none;
 }
