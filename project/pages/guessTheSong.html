@@ -42,31 +42,42 @@
     </nav>
 
     <div id="gameContainer">
-        <img id="disk" src="../img/guessTheSong/disk.png" alt="disk">
+        <div id="game">
+            <img id="disk" src="../img/guessTheSong/disk.png" alt="disk">
 
-        <div id="coverBox">
+            <div id="coverBox">
 
+            </div>
+
+            <div id="buttonBox">
+                <div class="guessButtons" onclick="clickButton0();"></div>
+
+                <div id="countBox"></div>
+
+                <div class="guessButtons" onclick="clickButton1();"></div>
+            </div>
+
+            <div id="ruleButton">
+                <p>Rules</p>
+            </div>
         </div>
 
-        <div id="buttonBox">
-            <div class="guessButtons"></div>
 
-            <div class="guessButtons"></div>
-        </div>
-
-        <div id="ruleButton">
-            <p>Rules</p>
-        </div>
-
-        <!-- <div id="rules">
+        <div id="rules">
             <h1>Rules</h1>
             <p>In this Game you have to guess the right song. <br> You can choose between guessing the song by Name or
                 by Cover.</p>
 
             <div id="ruleButtonBox">
+                <div class="startButton" onclick="startNameGame();">
+                    <p>Start Game with Names</p>
+                </div>
 
+                <div class="startButton">
+                    <p>Start Game with Covers</p>
+                </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </body>
 

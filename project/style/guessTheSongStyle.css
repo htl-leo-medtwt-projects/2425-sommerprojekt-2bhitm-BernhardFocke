@@ -95,9 +95,13 @@ nav {
     position: relative;
 }
 
+#game {
+    display: none;
+}
+
 #rules {
     height: 80vh;
-    width: 80%;
+    width: 100%;
     background: #3F5EFB;
     background: var(--gameGradinent);
     margin-top: 5vh;
@@ -111,8 +115,17 @@ nav {
     color: white;
 }
 
+.switch {
+    animation: switchToGame 2s ease-in-out;
+}
+
+@keyframes switchToGame {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
 #ruleButton {
-    height: 10vh;
+    height: 5vh;
     width: 10vw;
     background-color: rgba(219, 24, 63, 1);
     display: flex;
@@ -123,6 +136,27 @@ nav {
     right: 0;
     border-radius: 2vh;
     color: white;
+    font-size: 2vh;
+}
+
+#ruleButtonBox {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 50vh;
+}
+
+.startButton {
+    height: 10vh;
+    width: 20vw;
+    background: #3F5EFB;
+    background: var(--gameGradinent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vh;
 }
 
 #disk {
@@ -161,16 +195,29 @@ nav {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    left: 0;
+    font-size: 2vh;
 }
 
 .guessButtons {
     height: 10vh;
     width: 25vw;
-    background-color: black;    
+    background-color: #3F5EFB;    
     border-radius: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    pointer-events: none;
+    border: 3px solid #1c1cb1;
+}
+
+#countBox {
+    height: 10vh;
+    width: 10vw;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4vh;
 }
