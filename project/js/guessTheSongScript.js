@@ -6,13 +6,15 @@ let ruleBox = document.getElementById('rules');
 let countBox = document.getElementById('countBox')
 let counter = 0;
 let rndNum = 0;
+let version;
 
 let songArr = [
     "../songs/Avicii - Levels.mp3",
     "../songs/Avicii - Waiting For Love.mp3",
     "../songs/Marshmello, venbee - No Mans Land.mp3",
     "../songs/Kygo - Stole The Show feat. Parson James.mp3",
-    "../songs/Owl City - Verge ft. Aloe Blacc.mp3"
+    "../songs/Owl City - Verge ft. Aloe Blacc.mp3",
+    "../songs/Avicii - Dear Boy"
 ];
 
 let nameArr = [
@@ -20,7 +22,8 @@ let nameArr = [
     "Avicii - Waiting For Love",
     "Marshmello, venbee - No Mans Land",
     "Kygo - Stole The Show feat. Parson James",
-    "Owl City - Verge ft. Aloe Blacc"
+    "Owl City - Verge ft. Aloe Blacc",
+    "Avicii - Dear Boy"
 ];
 
 //Game
@@ -30,6 +33,13 @@ let rightAnswer = "";
 let currentSong;
 
 function startNameGame() {
+    version = 1.0;
+    switchToGame();
+    gameLoop();
+}
+
+function startCoverGame() {
+    version = 2.0;
     switchToGame();
     gameLoop();
 }
@@ -63,22 +73,26 @@ function gameLoop() {
     while (rightSongNum == rndNameNum) {
         rndNameNum = getRndNum();
     }
-    
+
     musicDisk.classList.remove('diskAnimation');
     musicDisk.offsetHeight;
     musicDisk.classList.add('diskAnimation');
 
-    let rndPlace = getRndPlace();
-    let secondRndPlace = getRndPlace();
+    if (version == 1.0) {
+        let rndPlace = getRndPlace();
+        let secondRndPlace = getRndPlace();
 
-    while (rndPlace == secondRndPlace) {
-        secondRndPlace = getRndPlace();
+        while (rndPlace == secondRndPlace) {
+            secondRndPlace = getRndPlace();
+        }
+
+        guessButtons[rndPlace].innerHTML = nameArr[rightSongNum];
+        guessButtons[secondRndPlace].innerHTML = nameArr[rndNameNum];
+
+        rightAnswer = nameArr[rightSongNum];
+    } else {
+        
     }
-
-    guessButtons[rndPlace].innerHTML = nameArr[rightSongNum];
-    guessButtons[secondRndPlace].innerHTML = nameArr[rndNameNum];
-
-    rightAnswer = nameArr[rightSongNum];
 
     currentSong.play();
     currentSong.volume = 0.10;
@@ -99,7 +113,7 @@ function clickButton1() {
 }
 
 function checkWin() {
-    if(userAnswer == rightAnswer) {
+    if (userAnswer == rightAnswer) {
         guessButtons[boxNum].style = 'background-color: #5cb85c;';
 
         if (boxNum == 1) {
