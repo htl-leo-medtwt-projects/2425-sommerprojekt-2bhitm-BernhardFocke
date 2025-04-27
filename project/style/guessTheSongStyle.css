@@ -174,21 +174,7 @@ nav {
     100% {transform: rotate(360deg);}
 }
 
-#coverBox {
-    position: absolute;
-    top: 123vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#coverBox > img {
-    height: 20vh;
-    width: 20vw;
-}
-
-#buttonBox {
+#nameButtonBox {
     position: absolute;
     top: 60vh;
     display: flex;
@@ -197,6 +183,30 @@ nav {
     width: 100%;
     left: 0;
     font-size: 2vh;
+}
+
+#coverButtonBox {
+    position: absolute;
+    top: 45vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    left: 0;
+}
+
+.coverGuessButtons {
+    height: 25vh;
+    width: 25vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23vh;
+    color: white;
+    border-radius: 2vh;
 }
 
 .guessButtons {
@@ -211,7 +221,7 @@ nav {
     border: 3px solid #1c1cb1;
 }
 
-#countBox {
+.countBox {
     height: 10vh;
     width: 10vw;
     background-color: transparent;

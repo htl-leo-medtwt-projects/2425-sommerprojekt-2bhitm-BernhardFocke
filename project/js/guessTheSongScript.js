@@ -1,9 +1,11 @@
-let coverBox = document.getElementById('coverBox');
 let guessButtons = document.getElementsByClassName('guessButtons');
-let gameBox = document.getElementById('game');
+let game = document.getElementById('game');
 let musicDisk = document.querySelector('#disk');
 let ruleBox = document.getElementById('rules');
-let countBox = document.getElementById('countBox')
+let countBox = document.getElementsByClassName('countBox');
+let coverGuessButtons = document.getElementsByClassName('coverGuessButtons');
+let nameButtonBox = document.getElementById('nameButtonBox');
+let coverButtonBox = document.getElementById('coverButtonBox');
 let counter = 0;
 let rndNum = 0;
 let version;
@@ -14,7 +16,7 @@ let songArr = [
     "../songs/Marshmello, venbee - No Mans Land.mp3",
     "../songs/Kygo - Stole The Show feat. Parson James.mp3",
     "../songs/Owl City - Verge ft. Aloe Blacc.mp3",
-    "../songs/Avicii - Dear Boy"
+    "../songs/Avicii - Dear Boy.mp3"
 ];
 
 let nameArr = [
@@ -26,20 +28,35 @@ let nameArr = [
     "Avicii - Dear Boy"
 ];
 
+let coverArr = [
+    "../img/guessTheSong/covers/levels.jpg",
+    "../img/guessTheSong/covers/stories.jpg",
+    "../img/guessTheSong/covers/noMansLand.jpg",
+    "../img/guessTheSong/covers/cloudNine.jpg",
+    "../img/guessTheSong/covers/mobileOrchestra.jpg",
+    "../img/guessTheSong/covers/true.jpeg"
+];
+
+
 //Game
 let userAnswer = "";
 let boxNum;
 let rightAnswer = "";
 let currentSong;
 
+
 function startNameGame() {
     version = 1.0;
+    nameButtonBox.style = 'display: flex;';
+    coverButtonBox.style = 'display: none;';
     switchToGame();
     gameLoop();
 }
 
 function startCoverGame() {
     version = 2.0;
+    nameButtonBox.style = 'display: none';
+    coverButtonBox.style = 'display: flex;';
     switchToGame();
     gameLoop();
 }
@@ -53,8 +70,8 @@ function switchToGame() {
 }
 
 function removeRules() {
-    ruleBox.style = 'display: none';
-    gameBox.style = 'display: block';
+    ruleBox.style = 'display: none;';
+    game.style = 'display: block;';
 }
 
 function getRndNum() {
@@ -64,6 +81,9 @@ function getRndNum() {
 function getRndPlace() {
     return Math.ceil((Math.random() * 2) - 1);
 }
+
+let rndPlace = getRndPlace();
+let secondRndPlace = getRndPlace();
 
 function gameLoop() {
     let rightSongNum = getRndNum();
@@ -78,21 +98,20 @@ function gameLoop() {
     musicDisk.offsetHeight;
     musicDisk.classList.add('diskAnimation');
 
-    if (version == 1.0) {
-        let rndPlace = getRndPlace();
-        let secondRndPlace = getRndPlace();
+    rndPlace = getRndPlace();
+    secondRndPlace = getRndPlace();
 
-        while (rndPlace == secondRndPlace) {
-            secondRndPlace = getRndPlace();
-        }
-
-        guessButtons[rndPlace].innerHTML = nameArr[rightSongNum];
-        guessButtons[secondRndPlace].innerHTML = nameArr[rndNameNum];
-
-        rightAnswer = nameArr[rightSongNum];
-    } else {
-        
+    while (rndPlace == secondRndPlace) {
+        secondRndPlace = getRndPlace();
     }
+
+    guessButtons[rndPlace].innerHTML = nameArr[rightSongNum];
+    guessButtons[secondRndPlace].innerHTML = nameArr[rndNameNum];
+
+    coverGuessButtons[rndPlace].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverArr[rightSongNum]});`;
+    coverGuessButtons[secondRndPlace].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverArr[rndNameNum]});`;
+
+    rightAnswer = nameArr[rightSongNum];
 
     currentSong.play();
     currentSong.volume = 0.10;
@@ -101,39 +120,66 @@ function gameLoop() {
 function clickButton0() {
     userAnswer = guessButtons[0].innerHTML;
     boxNum = 0;
-    guessButtons[1].style = "pointer-events: none;";
+    guessButtons[1].style += "pointer-events: none;";
     checkWin();
 }
 
 function clickButton1() {
     userAnswer = guessButtons[1].innerHTML;
     boxNum = 1;
-    guessButtons[0].style = "pointer-events: none;";
+    guessButtons[0].style += "pointer-events: none;";
     checkWin();
 }
 
 function checkWin() {
     if (userAnswer == rightAnswer) {
-        guessButtons[boxNum].style = 'background-color: #5cb85c;';
-
-        if (boxNum == 1) {
-            guessButtons[--boxNum].style = 'background-color: #FF2C2C;';
-        } else {
-            guessButtons[++boxNum].style = 'background-color: #FF2C2C;';
-        }
-
         counter++;
-    } else {
-        guessButtons[boxNum].style = 'background-color: #FF2C2C;';
+        if (version == 1.0) {
+            guessButtons[boxNum].style = 'background-color: #5cb85c;';
 
-        if (boxNum == 1) {
-            guessButtons[--boxNum].style = 'background-color: #5cb85c;';
+            if (boxNum == 1) {
+                guessButtons[--boxNum].style = 'background-color: #FF2C2C;';
+            } else {
+                guessButtons[++boxNum].style = 'background-color: #FF2C2C;';
+            }
+
+            countBox[0].innerHTML = `${counter} Point(s)!`;
         } else {
-            guessButtons[++boxNum].style = 'background-color: #5cb85c;';
+            coverGuessButtons[boxNum].style.cssText += 'border: 5px solid #5cb85c;';
+
+            if (boxNum == 1) {
+                coverGuessButtons[--boxNum].style.cssText += 'border: 5px solid #FF2C2C;';
+            } else {
+                coverGuessButtons[++boxNum].style.cssText += 'border: 5px solid #FF2C2C;';
+            }
+
+            countBox[1].innerHTML = `${counter} Point(s)!`;
+        }
+        
+    } else {
+        if (version == 1.0) {
+            guessButtons[boxNum].style = 'background-color: #FF2C2C;';
+
+            if (boxNum == 1) {
+                guessButtons[--boxNum].style = 'background-color: #5cb85c;';
+            } else {
+                guessButtons[++boxNum].style = 'background-color: #5cb85c;';
+            }
+
+            countBox[0].innerHTML = `${counter} Point(s)!`;
+        } else {
+            coverGuessButtons[boxNum].style.cssText += 'border: 5px solid #FF2C2C;';
+
+            if (boxNum == 1) {
+                coverGuessButtons[--boxNum].style.cssText += 'border: 5px solid #5cb85c';
+            } else {
+                coverGuessButtons[++boxNum].style.cssText += 'border: 5px solid #5cb85c';
+            }
+
+            countBox[1].innerHTML = `${counter} Point(s)!`;
         }
     }
 
-    countBox.innerHTML = `${counter} Point(s)!`;
     setTimeout(resetGame, 3000);
 }
 
