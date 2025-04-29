@@ -74,6 +74,11 @@ function removeRules() {
     game.style = 'display: block;';
 }
 
+function switchToRules() {
+    ruleBox.style = 'display: block';
+    game.style = 'display: none';
+}
+
 function getRndNum() {
     return Math.ceil(Math.random() * songArr.length - 1);
 }
@@ -87,11 +92,11 @@ let secondRndPlace = getRndPlace();
 
 function gameLoop() {
     let rightSongNum = getRndNum();
-    let rndNameNum = getRndNum();
+    let rndNum = getRndNum();
     currentSong = new Audio(songArr[rightSongNum]);
 
-    while (rightSongNum == rndNameNum) {
-        rndNameNum = getRndNum();
+    while (rightSongNum == rndNum) {
+        rndNum = getRndNum();
     }
 
     musicDisk.classList.remove('diskAnimation');
@@ -106,10 +111,10 @@ function gameLoop() {
     }
 
     guessButtons[rndPlace].innerHTML = nameArr[rightSongNum];
-    guessButtons[secondRndPlace].innerHTML = nameArr[rndNameNum];
+    guessButtons[secondRndPlace].innerHTML = nameArr[rndNum];
 
     coverGuessButtons[rndPlace].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverArr[rightSongNum]});`;
-    coverGuessButtons[secondRndPlace].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverArr[rndNameNum]});`;
+    coverGuessButtons[secondRndPlace].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverArr[rndNum]});`;
 
     rightAnswer = nameArr[rightSongNum];
 
