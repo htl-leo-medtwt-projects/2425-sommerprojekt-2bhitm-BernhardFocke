@@ -75,8 +75,10 @@ function removeRules() {
 }
 
 function switchToRules() {
+    ruleBox.classList.remove('switch');
     ruleBox.style = 'display: block';
     game.style = 'display: none';
+    currentSong.pause();
 }
 
 function getRndNum() {

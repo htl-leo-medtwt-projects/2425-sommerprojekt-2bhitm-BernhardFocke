@@ -1,0 +1,52 @@
+@font-face {
+    font-family: MoonWalk;
+    src: url(../fonts/Moon\ Walk.ttf);
+}
+
+body {
+    background-color: var(--mainColor);
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --mainColor: #222222;
+    --headFont: MoonWalk;
+}
+
+header {
+    height: 50vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgrounds/dj.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4rem;
+    font-family: var(--headFont);
+}
+
+#productBox {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+#innerNav {
+    height: 80vh;
+    width: 20%;
+    background-color: #344055;
+    
+}
+
+#products {
+    height: 80vh;
+    width: 80%;
+    background-color: #102B3F;
+}
