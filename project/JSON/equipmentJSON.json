@@ -1,0 +1,60 @@
+{
+    "products": [
+        [
+            {
+                "name": "FL Studio Frutiy Edition",
+                "company": "Image-Line",
+                "type": "Producer Software",
+                "price": "99"
+            }
+        ],
+        [
+            {
+                "name": "FL Studio Fruity Edition",
+                "company": "Image-Line",
+                "type": "Producer Software",
+                "price": "299"
+            }
+        ],
+        [
+            {
+                "name": "FL Studio Signature Edition",
+                "company": "Image-Line",
+                "type": "Producer Software",
+                "price": "319"
+            }
+        ],
+        [
+            {
+                "name": "FL Studio All Plugins Edition",
+                "company": "Image-Line",
+                "type": "Producer Software",
+                "price": "539"
+            }
+        ],
+        [
+            {
+                "name": "Abelton Live 12 Intro",
+                "company": "Abelton",
+                "type": "Producer Software",
+                "price": "79"
+            }
+        ],
+        [
+            {
+                "name": "Abelton Live 12 Standard",
+                "company": "Abelton",
+                "type": "Producer Software",
+                "price": "279"
+            }
+        ],
+        [
+            {
+                "name": "Abelton Live 12 Suite",
+                "company": "Abelton",
+                "type": "Producer Software",
+                "price": "599"
+            }
+        ]
+    ]
+}

@@ -12,6 +12,8 @@ body {
 :root {
     --mainColor: #222222;
     --headFont: MoonWalk;
+    --innerNavColor: #344055;
+    --productContainerColor: #102B3F;
 }
 
 header {
@@ -41,12 +43,29 @@ header {
 #innerNav {
     height: 80vh;
     width: 20%;
-    background-color: #344055;
+    background-color: var(--innerNavColor);
     
 }
 
-#products {
+#productContainer {
     height: 80vh;
     width: 80%;
-    background-color: #102B3F;
+    background-color: var(--productContainerColor);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.products {
+    height: 20vh;
+    width: 90%;
+    background-color: #8693AB;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 2vh;
+    margin-top: 2vh;
+    padding: 1vh;
 }
