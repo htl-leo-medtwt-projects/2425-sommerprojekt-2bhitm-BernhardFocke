@@ -55,6 +55,22 @@
                 "type": "Producer Software",
                 "price": "599"
             }
+        ],
+        [
+            {
+                "name": "Numark Mixstream Pro+ ",
+                "company": "Numark",
+                "type": "DJ Set",
+                "price": "679"
+            }
+        ],
+        [
+            {
+                "name": "Denon DJ Prime 4+ White",
+                "company": "Denon",
+                "type": "DJ Set",
+                "price": "2.089"
+            }
         ]
     ]
 }

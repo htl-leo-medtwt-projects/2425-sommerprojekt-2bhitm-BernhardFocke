@@ -3,6 +3,11 @@
     src: url(../fonts/Moon\ Walk.ttf);
 }
 
+@font-face {
+    font-family: Sansation;
+    src: url(../fonts/Sansation-Regular.ttf);
+}
+
 body {
     background-color: var(--mainColor);
     padding: 0;
@@ -14,6 +19,7 @@ body {
     --headFont: MoonWalk;
     --innerNavColor: #344055;
     --productContainerColor: #102B3F;
+    --productFont: Sansation;
 }
 
 header {
@@ -38,24 +44,47 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 10vh;
+    margin-top: 50vh;
 }
 
 #innerNav {
-    height: 80vh;
+    height: 150vh;
     width: 20%;
-    background-color: var(--innerNavColor);
-    
+    background-color: var(--innerNavColor);   
+}
+
+#search {
+    height: 10vh;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+#search > input {
+    height: 4vh;
+    width: 30vh;
+    background-color: transparent;
+    border: white 3px solid;
+    border-radius: 1vh;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#search > img {
+    height: auto;
+    width: 15%;
 }
 
 #productContainer {
-    height: 80vh;
+    height: 150vh;
     width: 80%;
     background-color: var(--productContainerColor);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 2vh;
 }
 
 .products {
@@ -66,6 +95,7 @@ header {
     margin-right: auto;
     margin-left: auto;
     border-radius: 2vh;
-    margin-top: 2vh;
+    margin-top: 1vh;
     padding: 1vh;
+    font-family: var(--productFont);
 }
