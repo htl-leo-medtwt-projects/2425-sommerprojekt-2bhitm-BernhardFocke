@@ -8,10 +8,16 @@
     src: url(../fonts/Sansation-Regular.ttf);
 }
 
+@font-face {
+    font-family: Speedy;
+    src: url(../fonts/SpeedyRegular-7BLoE.ttf);
+}
+
 body {
     background-color: var(--mainColor);
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 :root {
@@ -20,6 +26,7 @@ body {
     --innerNavColor: #344055;
     --productContainerColor: #102B3F;
     --productFont: Sansation;
+    --introductionFont: Speedy;
 }
 
 header {
@@ -37,6 +44,20 @@ header {
     font-family: var(--headFont);
 }
 
+header > h1 {
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
+}
+
 nav {
     height: 10vh;
     width: 100%;
@@ -45,6 +66,7 @@ nav {
     align-items: center;
     background-color: #4281A4;
     font-size: 2rem;
+    font-family: var(--productFont);
 }
 
 nav > div {
@@ -55,11 +77,28 @@ nav > div {
     align-items: center;
 }
 
-
-
 a {
     color: white;
     text-decoration: none;
+}
+
+#introduction {
+    height: 10vh;
+    width: 100%;
+    background-color: transparent;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: moveText 15s linear infinite;
+    position: absolute;
+    font-family: var(--introductionFont);
+}
+
+@keyframes moveText {
+    0% {right: -100%;}
+    100% {right: 110%;}
 }
 
 #productBox {
@@ -125,12 +164,15 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .productText {
     padding: 1vh;
     height: auto;
     width: 50%;
+    position: absolute;
+    right: 0;
 }
 
 .productImg {
@@ -146,5 +188,5 @@ a {
 }
 
 .productImg:hover {
-    width: 70%;
+    width: 60%;
 }
