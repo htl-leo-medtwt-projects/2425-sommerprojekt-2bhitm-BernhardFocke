@@ -5,7 +5,7 @@ body {
 header {
     height: 100vh;
     width: 100%;
-    background-image: url(../img/artitsts/avicii2.webp);
+    background-image: url(../img/artists/avicii2.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,9 +35,20 @@ header {
     align-items: center;
 }
 
-#slider > img {
-    height: auto;
-    width: 30%;
+#imgBox {
+    height: 60%;
+    width: 60%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: imgSlide 10s linear infinite;
+}
+
+@keyframes imgSlide {
+    0% {background-image: url(../img/artists/logos/AviciiLogo.png);}
+    33% {background-image: url(../img/artists/logos/AlanWalkerLogoWhite.png);}
+    66% {background-image: url(../img/artists/logos/MarshmelloLogoWhite.png)}
+    100% {background-image: url(../img/artists/logos/MartinGarrixLogoWhite.png)}
 }
 
 .fadeImg {

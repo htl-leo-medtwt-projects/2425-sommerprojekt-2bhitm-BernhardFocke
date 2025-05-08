@@ -6,14 +6,12 @@ let imgArr = [
     "../img/artists/logos/MartinGarrixLogoWhite.png"
 ];
 
-imgSlider();
+//imgSlider();
 
 function imgSlider() {
     for(let i = 0; i < imgArr.length; i++) {
         setAnimation();
         setTimeout(setimg(i), 5000);
-
-        break;
     }
 }
 
