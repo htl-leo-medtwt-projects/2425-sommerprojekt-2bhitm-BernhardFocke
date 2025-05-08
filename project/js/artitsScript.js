@@ -1,9 +1,9 @@
 let slider = document.getElementById('slider');
 
 let imgArr = [
-    "../img/artitsts/logos/AviciiLogoWhite.png",
-    "../img/artitsts/logos/MarshmelloLogoWhite.png",
-    "../img/artitsts/logos/MartinGarrixLogoWhite.png"
+    "../img/artists/logos/AviciiLogoWhite.png",
+    "../img/artists/logos/MarshmelloLogoWhite.png",
+    "../img/artists/logos/MartinGarrixLogoWhite.png"
 ];
 
 imgSlider();
