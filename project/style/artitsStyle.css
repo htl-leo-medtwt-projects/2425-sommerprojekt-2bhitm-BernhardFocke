@@ -26,3 +26,26 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+#slider {
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider > img {
+    height: auto;
+    width: 30%;
+}
+
+.fadeImg {
+    animation: imgFad 5s linear;
+}
+
+@keyframes imgFade {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
