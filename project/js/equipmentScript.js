@@ -24,7 +24,7 @@ async function listProducts() {
                                            <div class="productText">
                                            <h2>${productsJSON.products[i][0].name}</h2>
                                            <p>Published by ${productsJSON.products[i][0].company}</p>
-                                           <p>Typ: ${productsJSON.products[i][0].type}
+                                           <p>Typ: ${productsJSON.products[i][0].type} </p>
                                            <h1>${productsJSON.products[i][0].price} €</h1>
                                            </div>
                                            </div>`;
@@ -62,7 +62,7 @@ async function listSearchProducts(searchString) {
                                            <div class="productText">
                                            <h2>${productsJSON.products[i][0].name}</h2>
                                            <p>Published by ${productsJSON.products[i][0].company}</p>
-                                           <p>Typ: ${productsJSON.products[i][0].type}
+                                           <p>Typ: ${productsJSON.products[i][0].type}</p>
                                            <h1>${productsJSON.products[i][0].price} €</h1>
                                            </div>
                                            </div>`;

@@ -1,4 +1,6 @@
 let slider = document.getElementById('slider');
+let artistBox = document.getElementById('artistBox');
+let contentStr = "";
 
 let imgArr = [
     "../img/artists/logos/AviciiLogoWhite.png",
@@ -23,4 +25,9 @@ function setAnimation() {
     slider.classList.remove('fadeImg');
     slider.offsetHeight;
     slider.classList.add('fadeImg');
+}
+
+function setArtists() {
+    contentStr = `<div class="artistItem">
+                  `;
 }

@@ -23,8 +23,9 @@ header {
     border-radius: 2vh;
     font-size: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 3vh;
 }
 
 #slider {
@@ -41,13 +42,14 @@ header {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    animation: imgSlide 10s linear infinite;
+    animation: imgSlide 15s linear infinite;
 }
 
 @keyframes imgSlide {
-    0% {background-image: url(../img/artists/logos/AviciiLogo.png);}
-    33% {background-image: url(../img/artists/logos/AlanWalkerLogoWhite.png);}
-    66% {background-image: url(../img/artists/logos/MarshmelloLogoWhite.png)}
+    0% {background-image: url(../img/artists/logos/MartinGarrixLogoWhite.png);}
+    25% {background-image: url(../img/artists/logos/AviciiLogoWhite.png);}
+    50% {background-image: url(../img/artists/logos/AlanWalkerLogoWhite.png);}
+    75% {background-image: url(../img/artists/logos/MarshmelloLogoWhite.png)}
     100% {background-image: url(../img/artists/logos/MartinGarrixLogoWhite.png)}
 }
 
@@ -60,3 +62,4 @@ header {
     50% {opacity: 1;}
     100% {opacity: 0;}
 }
+
