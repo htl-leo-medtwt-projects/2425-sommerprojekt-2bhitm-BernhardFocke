@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: var(--mainBackgroundColor);
+    overflow-x: hidden;
 }
 
 :root {
@@ -73,8 +74,8 @@ header {
     width: 100%;
 }
 
-.artistItem {
-    height: 60vh;
+.artistItems {
+    height: 70vh;
     width: 99.5%;
     display: flex;
     justify-content: space-between;
@@ -82,10 +83,11 @@ header {
     background-color: #1B4353;
     color: white;
     margin-top: 20vh;
+    border-radius: 3vh;
 }
 
 .imgBox {
-    height: 60vh;
+    height: 70vh;
     width: 40%;
     background-position: center;
     background-repeat: no-repeat;

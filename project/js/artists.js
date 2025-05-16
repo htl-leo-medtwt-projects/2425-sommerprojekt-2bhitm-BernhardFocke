@@ -31,8 +31,8 @@ writeArtists();
 
 function writeArtists() {
     for (let i = 0; i < artistArr.artists.length; i++) {
-        if(i % 2 == 0) {
-            contentStr += `<div class="artistItem">
+        if (i % 2 == 0) {
+            contentStr += `<div class="artistItems" id="artistItem${i}">
                   <div class="imgBox">
                     
                   </div>
@@ -46,7 +46,7 @@ function writeArtists() {
                   </div>
                   </div>`;
         } else {
-            contentStr += `<div class="artistItem">
+            contentStr += `<div class="artistItems" id="artistItem${i}">
                   <div class="textBox">
                     <h1>${artistArr.artists[i][0].name}</h1>
                     <p>Age: ${artistArr.artists[i][0].age}</p>
@@ -66,15 +66,64 @@ function writeArtists() {
     artistBox.innerHTML = contentStr;
 
     let artistImgClass = document.getElementsByClassName('imgBox');
-    let aritstItemClass = document.getElementsByClassName('artistItem');
+    let aritstItemClass = document.getElementsByClassName('artistItems');
 
-    for(let i = 0; i < artistArr.artists.length; i++) {
+    for (let i = 0; i < artistArr.artists.length; i++) {
         artistImgClass[i].style = `background-image: url(${artistArr.artists[i][0].img});`;
 
-        if(i % 2 == 0) {
+        if (i % 2 == 0) {
             aritstItemClass[i].style = `transform: rotate(2deg);`;
         } else {
             aritstItemClass[i].style = `transform: rotate(-2deg);`;
         }
     }
 }
+
+gsap.registerPlugin(ScrollTrigger);
+
+let artistItems = document.getElementsByClassName('artistItems');
+
+animateBoxes();
+
+function animateBoxes() {
+    for (let i = 0; i < artistItems.length; i++) {
+        let current = document.getElementById(`artistItem${i}`);
+
+
+
+        if (i % 2 == 0) {
+            gsap.set(current, {
+                x: '-40%',
+                opacity: 0
+            });
+
+            gsap.to(current, {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: current,
+                    start: '60% 80%',
+                }
+            });
+        } else {
+            gsap.set(current, {
+            x: '40%',
+            opacity: 0
+            });
+
+            gsap.to(current, {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: current,
+                    start: '60% 80%',
+                }
+            });
+        }
+    }
+}
+
+
+
