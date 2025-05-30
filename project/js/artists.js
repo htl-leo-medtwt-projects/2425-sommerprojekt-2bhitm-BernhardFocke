@@ -89,8 +89,6 @@ function animateBoxes() {
     for (let i = 0; i < artistItems.length; i++) {
         let current = document.getElementById(`artistItem${i}`);
 
-
-
         if (i % 2 == 0) {
             gsap.set(current, {
                 x: '-40%',
@@ -108,8 +106,8 @@ function animateBoxes() {
             });
         } else {
             gsap.set(current, {
-            x: '40%',
-            opacity: 0
+                x: '40%',
+                opacity: 0
             });
 
             gsap.to(current, {
@@ -124,6 +122,3 @@ function animateBoxes() {
         }
     }
 }
-
-
-

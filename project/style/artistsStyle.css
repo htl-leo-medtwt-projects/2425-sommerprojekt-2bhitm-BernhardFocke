@@ -1,11 +1,19 @@
+@font-face {
+    font-family: Instrument;
+    src: url(../fonts/InstrumentSans-Regular.ttf);
+}
+
 body {
     margin: 0;
     background-color: var(--mainBackgroundColor);
     overflow-x: hidden;
+    font-family: Instrument;
 }
 
 :root {
     --mainBackgroundColor: #00171F;
+    --navColor: #28536B;
+    --mainFont: Intrument;
 }
 
 header {
@@ -69,13 +77,36 @@ header {
     100% {opacity: 0;}
 }
 
+nav {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--navColor);
+}
+
+.navItem {
+    height: 20vh;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
 #artistBox {
     height: auto;
     width: 100%;
 }
 
 .artistItems {
-    height: 70vh;
+    height: 60vh;
     width: 99.5%;
     display: flex;
     justify-content: space-between;
@@ -84,18 +115,29 @@ header {
     color: white;
     margin-top: 20vh;
     border-radius: 3vh;
+    font-size: 1.5rem;
 }
 
 .imgBox {
-    height: 70vh;
+    height: 60vh;
     width: 40%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 3vh;
+    transition: transform 1s ease-in-out;
+}
+
+.imgBox:hover {
+    transform: scale(1.1);
 }
 
 .textBox {
     height: 60vh;
     width: 55%;
     padding: 3vh;
+}
+
+.boxPoints {
+    font-size: 1.8rem;
 }
