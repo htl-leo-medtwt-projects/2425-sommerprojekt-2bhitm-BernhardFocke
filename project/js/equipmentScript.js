@@ -7,6 +7,8 @@ let productString = "";
 listProducts();
 
 function listProducts() {
+    productString = "";
+
     for (let i = 0; i < productsArr.products.length; i++) {
         productString += `<div class="products" id="product${i}">
                                            <div class="productImg">
@@ -21,7 +23,6 @@ function listProducts() {
                                            </div>
                                            </div>`;
 
-
     }
     productContainer.innerHTML += productString;
 
@@ -32,51 +33,45 @@ function listProducts() {
     }
 }
 
-async function listSearchProducts(searchString) {
+
+function listSearchProductsNew(searchString) {
     productContainer.innerHTML = "";
     productString = "";
 
-    try {
-        let responds = await fetch('../JSON/equipmentJSON.json');
-        let productsJSON = await responds.json();
-        console.log(productsJSON);
-
-        for (let i = 0; i < productsJSON.products.length; i++) {
-            if (productsJSON.products[i][0].name.includes(searchString)) {
-                productString += `<div class="products" id="product${i}">
+    for (let i = 0; i < productsArr.products.length; i++) {
+        if (productsArr.products[i][0].name.includes(searchString)) {
+            productString += `<div class="products" id="product${i}">
                                            <div class="productImg">
                                            
                                            </div>
 
                                            <div class="productText">
-                                           <h2>${productsJSON.products[i][0].name}</h2>
-                                           <p>Published by ${productsJSON.products[i][0].company}</p>
-                                           <p>Typ: ${productsJSON.products[i][0].type}</p>
-                                           <h1>${productsJSON.products[i][0].price} €</h1>
+                                           <h2>${productsArr.products[i][0].name}</h2>
+                                           <p>Published by ${productsArr.products[i][0].company}</p>
+                                           <p>Typ: ${productsArr.products[i][0].type}</p>
+                                           <h1>${productsArr.products[i][0].price} €</h1>
                                            </div>
                                            </div>`;
-            }
-
-            productContainer.innerHTML = productString;
-
-            let productImg = document.getElementsByClassName('productImg');
-
-            for (let i = 0; i < productsJSON.products.length; i++) {
-                if (productsJSON.products[i][0].name.includes(searchString)) {
-                    productImg[i].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${productsJSON.products[i][0].img});`;
-                }
-            }
         }
 
-    } catch (error) {
-        throw error;
+        productContainer.innerHTML = productString;
+    }
+
+    let productImgClass = document.getElementsByClassName('productImg');
+
+    for (let i = 0; i < productsArr.products.length; i++) {
+        if (productsArr.products[i][0].name.includes(searchString)) {
+            for (let j = 0; j < productImgClass.length; j++) {
+                productImgClass[j].style = `background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${productsArr.products[i][0].img});`;
+            }
+        }
     }
 }
 
 function searchProduct() {
     searchString = searchInput.value;
     searchInput.value = "";
-    listSearchProducts(searchString);
+    listSearchProductsNew(searchString);
 }
 
 searchInput.addEventListener('keyup', function (e) {

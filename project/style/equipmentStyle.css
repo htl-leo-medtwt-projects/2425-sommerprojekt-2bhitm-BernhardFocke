@@ -111,8 +111,9 @@ a {
 }
 
 #innerNav {
-    height: 150vh;
+    height: 180vh;
     width: 20%;
+    margin-top: 30vh;
     background-color: var(--innerNavColor);   
 }
 
@@ -140,10 +141,17 @@ a {
     width: 15%;
 }
 
-#productContainer {
-    height: 150vh;
+#background {
+    height: 180vh;
     width: 80%;
     background-color: var(--productContainerColor);
+    margin-top: 30vh;
+}
+
+#productContainer {
+    height: auto;
+    width: 100%;
+    background-color: transparent;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -159,7 +167,7 @@ a {
     margin-right: auto;
     margin-left: auto;
     border-radius: 2vh;
-    margin-top: 1vh;
+    margin-top: 5vh;
     font-family: var(--productFont);
     display: flex;
     justify-content: space-between;
