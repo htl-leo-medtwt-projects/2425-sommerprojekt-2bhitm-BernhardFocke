@@ -35,6 +35,14 @@ body {
     bottom: 0;
     border: 1px solid black;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 0.8vw;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    pointer-events: auto;
 }
 
 .white {
@@ -46,4 +54,15 @@ body {
     background-color: black;
     height: 60%;
     z-index: 2;
+}
+
+.key-overlay span {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0 2px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+}
+
+.black span {
+    background: white;
 }

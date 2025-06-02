@@ -2,56 +2,63 @@
 
 const container = document.getElementById("piano");
 
-const whiteKeysPerSide = 14;
-const blackKeysPerSide = 10;
-const gapPercent = 1;
+// Nur die mittleren Oktaven C3 bis B5
+const whiteNotes = [
+  "C3", "D3", "E3", "F3", "G3", "A3", "B3",
+  "C4", "D4", "E4", "F4", "G4", "A4", "B4",
+  "C5", "D5", "E5", "F5", "G5", "A5", "B5"
+];
 
-const sideWidth = (100 - gapPercent) / 2; // je Seite 49.5%
-const whiteKeyWidth = sideWidth / whiteKeysPerSide;
-const blackKeyWidth = whiteKeyWidth * 0.6;
+const blackNotes = [
+  "Db3", "Eb3", "", "Gb3", "Ab3", "Bb3",
+  "Db4", "Eb4", "", "Gb4", "Ab4", "Bb4",
+  "Db5", "Eb5", "", "Gb5", "Ab5", "Bb5"
+];
 
-const blackKeyPattern = [1, 3, 6, 8, 10]; // Positionen innerhalb der Oktave (0-basiert)
-const whiteNotesInOctave = 7;
+const whiteKeyCount = whiteNotes.length;
+const blackKeyMap = {
+  0: "Db3", 1: "Eb3", 3: "Gb3", 4: "Ab3", 5: "Bb3",
+  7: "Db4", 8: "Eb4", 10: "Gb4", 11: "Ab4", 12: "Bb4",
+  14: "Db5", 15: "Eb5", 17: "Gb5", 18: "Ab5", 19: "Bb5"
+};
 
-// Funktion zum Zeichnen weißer Tasten
-function drawWhiteKeys(startPercent, side) {
-    for (let i = 0; i < whiteKeysPerSide; i++) {
-        const key = document.createElement("div");
-        key.classList.add("key-overlay", "white");
-        key.style.left = `${(startPercent + i * whiteKeyWidth).toFixed(3)}%`;
-        key.style.width = `${whiteKeyWidth.toFixed(3)}%`;
-        container.appendChild(key);
-    }
+const keyWidth = 100 / whiteKeyCount;
+const blackWidth = keyWidth * 0.6;
+
+function createKey(note, isBlack, left, width) {
+  const div = document.createElement("div");
+  div.className = `key-overlay ${isBlack ? "black" : "white"}`;
+  div.style.left = `${left.toFixed(2)}%`;
+  div.style.width = `${width.toFixed(2)}%`;
+  div.dataset.note = note;
+  div.id = note;
+
+
+  const label = document.createElement("span");
+  label.innerText = note;
+  div.appendChild(label);
+
+  container.appendChild(div);
+  div.onclick = playTone(div, note);
 }
 
-// Funktion zum Zeichnen schwarzer Tasten
-function drawBlackKeysPrecise(startPercent) {
-  const blackKeyOffsets = [0, 1, 3, 4, 5]; // Positionen mit schwarzen Tasten innerhalb 7er-Oktave
-  const numWhite = 14;
-  const totalBlack = 10;
-  let blackCount = 0;
+// Weiße Tasten
+for (let i = 0; i < whiteKeyCount; i++) {
+  const note = whiteNotes[i];
+  createKey(note, false, i * keyWidth, keyWidth);
+}
 
-  for (let i = 0; i < numWhite; i++) {
-    const octavePos = i % 7;
-    if (blackKeyOffsets.includes(octavePos) && blackCount < totalBlack) {
-      const key = document.createElement("div");
-      key.classList.add("key-overlay", "black");
-
-      const left = startPercent + (i + 0.6) * whiteKeyWidth; // Feintuning auf 0.6
-      key.style.left = `${left.toFixed(3)}%`;
-      key.style.width = `${blackKeyWidth.toFixed(3)}%`;
-      container.appendChild(key);
-
-      blackCount++;
-    }
+// Schwarze Tasten (Lücken beachten)
+for (let i = 0; i < whiteKeyCount; i++) {
+  const note = blackKeyMap[i];
+  if (note) {
+    const left = (i + 0.7) * keyWidth;
+    createKey(note, true, left, blackWidth);
   }
 }
 
-// Linke Hälfte
-drawWhiteKeys(0, 'left');
-drawBlackKeysPrecise(0); // links
-
-// Rechte Hälfte (mit Schlitzversatz)
-const rightStart = sideWidth + gapPercent;
-drawWhiteKeys(rightStart, 'right');
-drawBlackKeysPrecise(rightStart); // rechts
+function playTone(current, note) {
+  let tune = new Audio(`../sounds/piano-mp3/${note}.mp3`);
+  //tune.play();
+  //current.style += 'background-color: blue;';
+}
