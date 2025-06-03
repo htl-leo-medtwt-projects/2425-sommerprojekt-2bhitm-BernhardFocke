@@ -16,7 +16,12 @@ let songArr = [
     "../songs/Marshmello, venbee - No Mans Land.mp3",
     "../songs/Kygo - Stole The Show feat. Parson James.mp3",
     "../songs/Owl City - Verge ft. Aloe Blacc.mp3",
-    "../songs/Avicii - Dear Boy.mp3"
+    "../songs/Avicii - Dear Boy.mp3",
+    "../songs/Kygo & Selena Gomez - It Aint Me.mp3",
+    "../songs/Alan Walker - Alone.mp3",
+    "../songs/Robin Schulz feat. Erika Sirola - Speechless.mp3",
+    "../songs/Avicii Featuring Elle King - Lets Ride Away.mp3",
+    "../songs/Martin Garrix feat. Bonn - High On Life.mp3"
 ];
 
 let nameArr = [
@@ -25,7 +30,12 @@ let nameArr = [
     "Marshmello, venbee - No Mans Land",
     "Kygo - Stole The Show feat. Parson James",
     "Owl City - Verge ft. Aloe Blacc",
-    "Avicii - Dear Boy"
+    "Avicii - Dear Boy",
+    "Kygo - It Aint Me",
+    "Alan Walker - Alone",
+    "Robin Schulz - Speechless",
+    "Avicii - Lets Ride Away",
+    "Martin Garrix - High On Life"
 ];
 
 let coverArr = [
@@ -34,7 +44,12 @@ let coverArr = [
     "../img/guessTheSong/covers/noMansLand.jpg",
     "../img/guessTheSong/covers/cloudNine.jpg",
     "../img/guessTheSong/covers/mobileOrchestra.jpg",
-    "../img/guessTheSong/covers/true.jpeg"
+    "../img/guessTheSong/covers/true.jpeg",
+    "../img/guessTheSong/covers/itAintMe.jpg",
+    "../img/guessTheSong/covers/alone.jpg",
+    "../img/guessTheSong/covers/speechless.jpg",
+    "../img/guessTheSong/covers/letsRideAway.jpg",
+    "../img/guessTheSong/covers/highOnLife.jpg"
 ];
 
 
@@ -75,7 +90,9 @@ function removeRules() {
 }
 
 function switchToRules() {
-    ruleBox.classList.remove('switch');
+    ruleBox.classList.remove('switchToRules');
+    ruleBox.offsetHeight;
+    ruleBox.classList.add('switchToRules');
     ruleBox.style = 'display: block';
     game.style = 'display: none';
     currentSong.pause();

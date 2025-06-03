@@ -47,7 +47,7 @@ body {
     aspect-ratio: 571/185;
     position: absolute;
     top: 19vh;
-    left: 28vh;
+    left: 23vh;
     z-index: -1;
 }
 
@@ -56,7 +56,7 @@ body {
     width: 25vh;
     position: absolute;
     top: -1vh;
-    right: 45vh;
+    right: 40vh;
     transform: rotate(-24.98deg);
     aspect-ratio: 232.15/588.07;
     z-index: -1;
@@ -65,11 +65,11 @@ body {
 #djController {
     height: auto;
     width: 50vh;
-    left: 90vh;
+    left: 75vh;
     z-index: -1;
     transform: rotate(18.267deg);
     position: absolute;
-    top: 1vh;
+    top: 10vh;
 }
 
 #laptopFL,

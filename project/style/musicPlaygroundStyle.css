@@ -48,6 +48,28 @@ header {
     background-size: cover;
 }
 
+nav {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #457EAC;
+}
+
+.navItem {
+    height: 20vh;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+a {
+    color: white;
+}
+
 #beforePlay {
     height: 50vh;
     width: 40%;
@@ -61,6 +83,7 @@ header {
     top: 18vh;
     z-index: 2;
     user-select: none;
+    font-size: 2vh;
 }
 
 .fadeBox {
@@ -90,12 +113,12 @@ header {
     margin-right: auto;
     margin-left: auto;
     border-radius: 2vh;
+    margin-top: 20vh;
 }
 
 #playground {
     height: 100vh;
     width: 100%;
-    margin-top: 30vh;
     position: relative;
 }
 
@@ -159,7 +182,7 @@ header {
 
 @keyframes keyWhite {
     0% {background-color: white;}
-    50% {background-color: darkorange;}
+    50% {background-color: #0081A7;}
     100% {background-color: white;}
 }
 
@@ -169,6 +192,6 @@ header {
 
 @keyframes keyBlack {
     0% {background-color: black;}
-    50% {background-color: #EFA00B}
+    50% {background-color: #00AFB9}
     100% {background-color: black;}
 }
