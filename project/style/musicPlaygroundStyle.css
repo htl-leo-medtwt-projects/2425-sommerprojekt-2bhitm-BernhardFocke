@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Sansation;
+    src: url(../fonts/Sansation-Regular.ttf);
+}
+
 body {
     margin: 0;
     background: #171738;
@@ -5,15 +10,93 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: var(--mainFont);
+    height: auto;
 }
 
 :root {
     --mainGradient: linear-gradient(130deg, rgba(23, 23, 56, 1) 0%, rgba(12, 74, 111, 1) 51%, rgba(0, 126, 167, 1) 100%);
+    --mainFont: Sansation;
+    --boxColor: #274C77;
+    --buttonColor: #6096BA;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#headText {
+    height: 100%;
+    width: 30%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+
+#headImg {
+    height: 100%;
+    width: 70%;
+    background: linear-gradient(to bottom left, transparent 0%, rgb(0, 0, 0) 100%),  url(../img/backgrounds/musicStudio.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#beforePlay {
+    height: 50vh;
+    width: 40%;
+    background-color: var(--boxColor);
+    border-radius: 2vh;
+    color: white;
+    text-align: center;
+    padding: 2vh;
+    position: absolute;
+    left: 28%;
+    top: 18vh;
+    z-index: 2;
+    user-select: none;
+}
+
+.fadeBox {
+    animation: fadeBox ease-in-out 1s 1;
+}
+
+@keyframes fadeBox {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#backgroundBox {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    position: absolute;
+    z-index: 2;
+}
+
+#tryButton {
+    height: 10vh;
+    width: 15vw;
+    background-color: var(--buttonColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 2vh;
 }
 
 #playground {
-    height: 50vh;
+    height: 100vh;
     width: 100%;
+    margin-top: 30vh;
+    position: relative;
 }
 
 #piano {
@@ -21,6 +104,9 @@ body {
     width: 100%;
     height: 30vh;
     overflow: hidden;
+    user-select: none;
+    z-index: 1;
+    top: 30vh;
 }
 
 #piano>img {
@@ -65,4 +151,24 @@ body {
 
 .black span {
     background: white;
+}
+
+.keyAnimationWhite {
+    animation: keyWhite ease-in-out 1s 1;
+}
+
+@keyframes keyWhite {
+    0% {background-color: white;}
+    50% {background-color: darkorange;}
+    100% {background-color: white;}
+}
+
+.keyAnimationBlack {
+    animation: keyBlack ease-in-out 1s 1;
+}
+
+@keyframes keyBlack {
+    0% {background-color: black;}
+    50% {background-color: #EFA00B}
+    100% {background-color: black;}
 }

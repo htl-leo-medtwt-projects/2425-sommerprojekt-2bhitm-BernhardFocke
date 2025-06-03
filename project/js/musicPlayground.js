@@ -39,7 +39,7 @@ function createKey(note, isBlack, left, width) {
   div.appendChild(label);
 
   container.appendChild(div);
-  div.onclick = playTone(div, note);
+  div.onclick = () => playTone(div, note, isBlack);
 }
 
 // Weiße Tasten
@@ -57,8 +57,33 @@ for (let i = 0; i < whiteKeyCount; i++) {
   }
 }
 
-function playTone(current, note) {
+let tutBox = document.getElementById('beforePlay');
+let backgroundBox = document.getElementById('backgroundBox');
+
+function playTone(current, note, isBlack) {
   let tune = new Audio(`../sounds/piano-mp3/${note}.mp3`);
-  //tune.play();
-  //current.style += 'background-color: blue;';
+  tune.play();
+
+  if (!isBlack) {
+    current.classList.remove('keyAnimationWhite');
+    current.offsetHeight;
+    current.classList.add('keyAnimationWhite');
+  } else {
+    current.classList.remove('keyAnimationBlack');
+    current.offsetHeight;
+    current.classList.add('keyAnimationBlack');
+  }
+}
+
+function removeTUT() {
+  tutBox.classList.remove('fadeBox');
+  tutBox.offsetHeight;
+  tutBox.classList.add('fadeBox');
+
+  setTimeout(removeBox, 1000);
+}
+
+function removeBox() {
+  tutBox.style = 'display: none;';
+  backgroundBox.style = 'display: none';
 }
