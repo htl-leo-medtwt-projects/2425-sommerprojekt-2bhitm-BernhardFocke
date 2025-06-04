@@ -25,7 +25,7 @@ a {
 
 :root {
     --mainColor: #222222;
-    --navColor: #020024;
+    --navColor: #4A30F2;
     --mainGradient: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
     --gameGradinent: linear-gradient(69deg, rgba(63, 94, 251, 1) 0%, rgba(153, 83, 182, 1) 41%, rgba(252, 70, 107, 1) 100%);
     --headfont: Altorned;
@@ -41,7 +41,7 @@ header > img {
 nav {
     height: 10vh;
     width: 100%;
-    background-color: #4A30F2;
+    background-color: var(--navColor);
     display: flex;
     justify-content: space-around;
     margin-top: -1vh;
@@ -242,4 +242,70 @@ nav {
     align-items: center;
     color: white;
     font-size: 4vh;
+}
+
+/*Responsive*/
+@media (max-width: 600px) {
+    #headBox {
+        height: 15vh;
+    }
+
+    #headBox > h1 {
+        font-size: 3vh;
+    }
+
+    nav {
+        display: block;
+        margin-bottom: 20vh;
+    }
+
+    .navItem {
+        width: 100%;
+        height: 6vh;
+        background-color: var(--navColor);
+    }
+
+    .navItem > a {
+        font-size: 2vh;
+    }
+
+    #rules {
+        font-size: 2vh;
+    }
+
+    #disk {
+        height: auto;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .startButton {
+        width: 15vh;
+    }
+
+    .guessButtons {
+        width: 13vh;
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    #coverButtonBox {
+        margin-top: 5vh;
+    }
+
+    .coverGuessButtons {
+        width: 10vh;
+        padding: 1vh;
+        font-size: 10vh;
+        height: 20vh;
+    }
+
+    #ruleButton {
+        border-radius: 1vh;
+    }
+
+    .countBox {
+        font-size: 2vh;
+        text-align: center;
+    }
 }

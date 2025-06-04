@@ -219,3 +219,47 @@ a {
     font-size: 2rem;
     padding: 1vh;
 }
+
+/*Responsive*/
+
+@media (max-width: 600px) {
+    #section1 {
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    #section2 {
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    #section3 {
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    #section4 {
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    #navItem0 {
+        font-size: 2vh;
+    }
+
+    #navItem1 {
+        font-size: 2vh;
+    }
+
+    #navItem2 {
+        font-size: 2vh;
+    }
+
+    #navItem3 {
+        font-size: 2vh;
+    }
+
+    #navItem4 {
+        font-size: 2vh;
+    }
+}

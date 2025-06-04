@@ -19,6 +19,7 @@ body {
     --mainFont: Sansation;
     --boxColor: #274C77;
     --buttonColor: #6096BA;
+    --navColor: #457EAC;
 }
 
 header {
@@ -42,7 +43,7 @@ header {
 #headImg {
     height: 100%;
     width: 70%;
-    background: linear-gradient(to bottom left, transparent 0%, rgb(0, 0, 0) 100%),  url(../img/backgrounds/musicStudio.jpg);
+    background: linear-gradient(to bottom left, transparent 0%, rgb(0, 0, 0) 100%), url(../img/backgrounds/musicStudio.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +55,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #457EAC;
+    background-color: var(--navColor);
 }
 
 .navItem {
@@ -68,6 +69,7 @@ nav {
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 #beforePlay {
@@ -91,8 +93,13 @@ a {
 }
 
 @keyframes fadeBox {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 #backgroundBox {
@@ -181,9 +188,17 @@ a {
 }
 
 @keyframes keyWhite {
-    0% {background-color: white;}
-    50% {background-color: #0081A7;}
-    100% {background-color: white;}
+    0% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: #0081A7;
+    }
+
+    100% {
+        background-color: white;
+    }
 }
 
 .keyAnimationBlack {
@@ -191,7 +206,66 @@ a {
 }
 
 @keyframes keyBlack {
-    0% {background-color: black;}
-    50% {background-color: #00AFB9}
-    100% {background-color: black;}
+    0% {
+        background-color: black;
+    }
+
+    50% {
+        background-color: #00AFB9
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+/*Responsive*/
+
+@media (max-width: 600px) {
+    .piano-container {
+        height: 20vh;
+    }
+
+    .key-overlay {
+        font-size: 2.5vw;
+    }
+
+    .black {
+        height: 50%;
+    }
+
+    .key-overlay span {
+        margin-bottom: 1px;
+        padding: 0 3px;
+    }
+
+    nav {
+        display: block;
+    }
+
+    .navItem {
+        font-size: 3vh;
+        width: 100%;
+        height: 10vh;
+        background-color: var(--navColor);
+    }
+
+    #headText {
+        width: 50%;
+        font-size: 2vh;
+        padding: 2vh;
+    }
+
+    #playground {
+        margin-top: 40vh;
+    }
+
+    #beforePlay {
+        width: 30vh;
+        left: 15%;
+    }
+
+    #tryButton {
+        width: 50vw;
+    }
 }
